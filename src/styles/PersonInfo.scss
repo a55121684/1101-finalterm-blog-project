@@ -1,0 +1,36 @@
+.person_card {
+    border: 5px solid black;
+    width: fit-content;
+    padding: 20px;
+    margin: 10px 10px 0;
+    border-radius: 50px;
+    overflow: hidden;
+
+    .person_imgBox {
+        border-radius: 50%;
+        border: 2px solid black;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .person_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+
+
+        .person_name {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .person_job {
+            margin-top: 15px;
+        }
+    }
+}
