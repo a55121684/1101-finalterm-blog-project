@@ -3,7 +3,7 @@ import logo from "../assets/blog_logo.png";
 import "../styles/Header.scss";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ setPostOpen }) {
   return (
     <div className="header">
       <div className="header_left">
@@ -14,10 +14,16 @@ export default function Header() {
         <Link className="header_navItem" to="/">
           Home
         </Link>
-        <Link className="header_navItem" to="/">
+        <Link className="header_navItem" to="/about">
           About
         </Link>
-        <Link className="header_navItem" to="/">
+        <Link
+          className="header_navItem"
+          to="/"
+          onClick={() => {
+            setPostOpen(true);
+          }}
+        >
           New Post
         </Link>
         <Link className="header_navItem" to="/">
