@@ -17,7 +17,7 @@ export default function NewPost({ setPostOpen }) {
           </div>
           <div className="newPost_inputBox">
             <label>請輸入文章內容 : </label>
-            <textarea className="newPost_inputText"></textarea>
+            <textarea rows="10" className="newPost_inputText"></textarea>
           </div>
         </form>
         <div className="newPost_btnBox">
