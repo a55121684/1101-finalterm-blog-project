@@ -24,9 +24,9 @@ export default function About() {
           <h2>技能</h2>
           <hr />
           <div>
-            程式語言 : <img className="langIcon" src={c} /> C語言 、
-            <img className="langIcon" src={cpp} /> C++ 、
-            <img className="langIcon" src={python} /> Python
+            程式語言 : <img className="langIcon" src={c} alt="" /> C語言 、
+            <img className="langIcon" src={cpp} alt="" /> C++ 、
+            <img className="langIcon" src={python} alt="" /> Python
           </div>
           <div>WEB : HTML 、 CSS 、 JS</div>
         </div>
