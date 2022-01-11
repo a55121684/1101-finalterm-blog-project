@@ -3,7 +3,12 @@ import logo from "../assets/blog_logo.png";
 import "../styles/components/Header.scss";
 import { Link } from "react-router-dom";
 
-export default function Header({ setPostOpen, setSignOpen }) {
+export default function Header({
+  currentUser,
+  setCurrentUser,
+  setPostOpen,
+  setSignOpen,
+}) {
   return (
     <div className="header">
       <div className="header_left">
@@ -21,20 +26,36 @@ export default function Header({ setPostOpen, setSignOpen }) {
           className="header_navItem"
           to="/"
           onClick={() => {
-            setPostOpen(true);
+            if (currentUser) {
+              setPostOpen(true);
+            } else {
+              alert("Not Login Yet");
+            }
           }}
         >
           New Post
         </Link>
-        <Link
-          className="header_navItem"
-          to="/"
-          onClick={() => {
-            setSignOpen(true);
-          }}
-        >
-          Login
-        </Link>
+        {currentUser ? (
+          <Link
+            className="header_navItem"
+            to="/"
+            onClick={() => {
+              setCurrentUser(null);
+            }}
+          >
+            Log out
+          </Link>
+        ) : (
+          <Link
+            className="header_navItem"
+            to="/"
+            onClick={() => {
+              setSignOpen(true);
+            }}
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

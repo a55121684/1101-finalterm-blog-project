@@ -12,10 +12,10 @@ export default function HomePage() {
   const [postOpen, setPostOpen] = useState(false);
   const [signOpen, setSignOpen] = useState(false);
   const [postsData, setPostsData] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     getAllPosts().then((data) => {
-      console.log(data);
       setPostsData(data);
     });
   }, []);
@@ -23,7 +23,12 @@ export default function HomePage() {
   return (
     <div>
       <div className="homepage_header">
-        <Header setPostOpen={setPostOpen} setSignOpen={setSignOpen} />
+        <Header
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+          setPostOpen={setPostOpen}
+          setSignOpen={setSignOpen}
+        />
       </div>
       <div className="homepage_content">
         <div className="homepage_person">
@@ -52,7 +57,7 @@ export default function HomePage() {
       ) : null}
       {signOpen ? (
         <div>
-          <Sign setSignOpen={setSignOpen} />
+          <Sign setSignOpen={setSignOpen} setCurrentUser={setCurrentUser} />
           <Backdrop />
         </div>
       ) : null}

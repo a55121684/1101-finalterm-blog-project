@@ -1,11 +1,32 @@
 import React, { useState } from "react";
 import "../styles/components/Sign.scss";
+import { loginUser, createUser } from "../api/UserAPI";
 
-export default function Sign({ setSignOpen }) {
+export default function Sign({ setSignOpen, setCurrentUser }) {
   const [isSignIn, setIsSignIn] = useState(true);
+  const [account, setAccount] = useState("");
+  const [password, setPassword] = useState("");
 
   function toggleSignState() {
     setIsSignIn(!isSignIn);
+  }
+
+  function submit() {
+    if (isSignIn) {
+      loginUser({ account, password }).then((data) => {
+        if (data.account) {
+          setCurrentUser(data);
+          alert("Login Successful");
+          setSignOpen(false);
+        } else {
+          alert(data.msg);
+        }
+        setAccount("");
+        setPassword("");
+      });
+    } else {
+      createUser({ account, password });
+    }
   }
 
   return (
@@ -15,11 +36,25 @@ export default function Sign({ setSignOpen }) {
         <form className="sign_form">
           <div className="sign_inputBox">
             <label>帳號 :</label>
-            <input className="sign_inputText" type="text" />
+            <input
+              className="sign_inputText"
+              type="text"
+              value={account}
+              onChange={(e) => {
+                setAccount(e.target.value);
+              }}
+            />
           </div>
           <div className="sign_inputBox">
             <label>密碼 :</label>
-            <input className="sign_inputText" type="password" />
+            <input
+              className="sign_inputText"
+              type="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+            />
           </div>
         </form>
       </div>
@@ -32,7 +67,14 @@ export default function Sign({ setSignOpen }) {
         >
           離開
         </button>
-        <button className="btn">{isSignIn ? "登入" : "註冊"}</button>
+        <button
+          className="btn"
+          onClick={() => {
+            submit();
+          }}
+        >
+          {isSignIn ? "登入" : "註冊"}
+        </button>
       </div>
       <div>
         <button

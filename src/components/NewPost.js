@@ -80,6 +80,7 @@ export default function NewPost({ setPostOpen }) {
             className="btn"
             onClick={() => {
               submit();
+              setPostOpen(false);
             }}
           >
             新增貼文
