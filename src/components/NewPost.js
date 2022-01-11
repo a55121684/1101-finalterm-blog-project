@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/NewPost.scss";
+import "../styles/components/NewPost.scss";
 
 export default function NewPost({ setPostOpen }) {
   return (

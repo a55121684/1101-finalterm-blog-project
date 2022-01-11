@@ -1,6 +1,6 @@
 import React from "react";
 import person from "../assets/person_img.png";
-import "../styles/PersonInfo.scss";
+import "../styles/components/PersonInfo.scss";
 
 export default function PersonInfo() {
   return (

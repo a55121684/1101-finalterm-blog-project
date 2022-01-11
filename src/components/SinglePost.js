@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/SinglePost.scss";
+import "../styles/components/SinglePost.scss";
 
 export default function SinglePost({ title, content, img, date }) {
   return (

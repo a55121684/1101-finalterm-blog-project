@@ -5,7 +5,7 @@ import Sign from "../components/Sign";
 import NewPost from "../components/NewPost";
 import PersonInfo from "../components/PersonInfo";
 import SinglePost from "../components/SinglePost";
-import "../styles/HomePage.scss";
+import "../styles/pages/HomePage.scss";
 
 export default function HomePage() {
   const [postOpen, setPostOpen] = useState(false);

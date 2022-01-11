@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/Sign.scss";
+import "../styles/components/Sign.scss";
 
 export default function Sign({ setSignOpen }) {
   const [isSignIn, setIsSignIn] = useState(true);

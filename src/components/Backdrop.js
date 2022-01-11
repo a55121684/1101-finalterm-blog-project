@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Backdrop.scss";
+import "../styles/components/Backdrop.scss";
 
 export default function Backdrop() {
   return (

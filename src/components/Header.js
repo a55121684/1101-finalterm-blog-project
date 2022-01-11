@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/blog_logo.png";
-import "../styles/Header.scss";
+import "../styles/components/Header.scss";
 import { Link } from "react-router-dom";
 
 export default function Header({ setPostOpen, setSignOpen }) {
