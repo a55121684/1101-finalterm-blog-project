@@ -5,7 +5,7 @@ export default function NewPost({ setPostOpen }) {
   return (
     <div>
       <div class="newPost">
-        <h3>New Post</h3>
+        <h3 className="newPost_title">New Post</h3>
         <form className="newPost_form">
           <div className="newPost_inputBox">
             <label>請輸入文章標題 : </label>

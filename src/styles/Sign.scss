@@ -1,11 +1,11 @@
-.newPost {
+.sign {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   background-color: white;
   padding: 1.5rem;
   text-align: center;
   width: 30rem;
-  height: 60vh;
+  height: 50vh;
   z-index: 10;
   position: fixed;
   top: 20vh;
@@ -14,39 +14,31 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  .newPost_title {
+
+  .sign_title {
     font-size: 30px;
   }
 
-  .newPost_form {
+  .sign_form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    .newPost_inputBox {
+    .sign_inputBox {
       margin: 15px 0;
       display: flex;
       justify-content: center;
       align-items: center;
       border: 1px solid black;
       padding: 10px;
+    }
 
-      .newPost_inputFile {
-        width: 154px;
-        margin-left: 15px;
-      }
-
-      .newPost_inputText {
-        margin-left: 15px;
-      }
-      textarea {
-        resize: none;
-      }
+    .sign_inputText {
+      margin-left: 15px;
     }
   }
-
-  .newPost_btnBox {
+  .sign_btnBox {
     width: 50%;
     display: flex;
     justify-content: space-between;
@@ -56,5 +48,9 @@
       width: 80px;
       height: 30px;
     }
+  }
+  .signChange_btn {
+    width: 80px;
+    height: 30px;
   }
 }

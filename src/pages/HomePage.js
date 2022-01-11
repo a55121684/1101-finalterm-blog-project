@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Backdrop from "../components/Backdrop";
 import Header from "../components/Header";
+import Sign from "../components/Sign";
 import NewPost from "../components/NewPost";
 import PersonInfo from "../components/PersonInfo";
 import SinglePost from "../components/SinglePost";
@@ -8,6 +9,7 @@ import "../styles/HomePage.scss";
 
 export default function HomePage() {
   const [postOpen, setPostOpen] = useState(false);
+  const [signOpen, setSignOpen] = useState(false);
 
   const testData = [
     {
@@ -47,7 +49,7 @@ export default function HomePage() {
   return (
     <div>
       <div className="homepage_header">
-        <Header setPostOpen={setPostOpen} />
+        <Header setPostOpen={setPostOpen} setSignOpen={setSignOpen} />
       </div>
       <div className="homepage_content">
         <div className="homepage_person">
@@ -71,6 +73,12 @@ export default function HomePage() {
       {postOpen ? (
         <div>
           <NewPost setPostOpen={setPostOpen} />
+          <Backdrop />
+        </div>
+      ) : null}
+      {signOpen ? (
+        <div>
+          <Sign setSignOpen={setSignOpen} />
           <Backdrop />
         </div>
       ) : null}
